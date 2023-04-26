@@ -20,3 +20,18 @@
   * If needed autoscaling will ad new instance to the **auto scaling group**
   * auto scaling can remove an instance from the group
   * if an existing instance is deemed **unhealthy**, it will be taken out of the service
+
+* ASG Policy is set of rules that govern scaling behaviour of asg 
+  * Types of scaling policies - target tracking, simple scaling, step scaling
+
+* Target tracking
+  * Uses predefined metric to maintain resource util
+  * EG to maintain CPU util at 50%
+  * ASG will automatically adjust number of EC2 instances, to maintain this 50% CPU util
+
+* Target Group
+  * Resources registered with ALB
+  * Target groups can be EC2 intances, IP addresses
+  * Target group defines protocol and port used to communicate with tehse resources within the group
+
+
