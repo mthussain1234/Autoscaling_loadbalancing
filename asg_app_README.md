@@ -58,6 +58,8 @@ sudo apt install nginx -y
 
 ![image](https://user-images.githubusercontent.com/129314018/234651975-80396ee1-a254-4b8c-b69a-45c876f3eb45.png)
 
-
 ![image](https://user-images.githubusercontent.com/129314018/234652022-5af259df-3655-452a-8c88-1e893567d209.png)
+
+15. Navigate to Instances, and there should be 2 instances available. To further check the auto scaling and load balancing, terminating one instance, will result in another instance being creating automatically
+
 ![image](https://user-images.githubusercontent.com/129314018/234652115-ec934db2-9e66-4c15-bb5c-22d651e8685a.png)
