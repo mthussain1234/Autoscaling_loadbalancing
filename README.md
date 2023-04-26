@@ -4,7 +4,10 @@
 
 * Load balancing distributes incoming traffic across multiple EC2 instances, we can see this in the diagram above
 * Application load balancers (ALB) is provided by AWS
-  * Routes incoming traffic to **Targets** such as EC2 instances 
+  * Routes incoming traffic to **Targets** such as EC2 instances
+* Network Load balancers (NLB) route traffic based on IP protocol data (TCP OR UDP)
+  * Used for applications such as gaming, media streaming, lets them handle large amounts of traffic
+* Classic Load Balancer (CLB) - used for simple applications - eg distributing traffic across multiple EC2 instances
 
 * Autoscaling is a feature which can automatically adjust the number of EC2 instances based on the current demand of the appilcation
 * You can scale up - increase resources allocated
@@ -17,4 +20,3 @@
   * If needed autoscaling will ad new instance to the **auto scaling group**
   * auto scaling can remove an instance from the group
   * if an existing instance is deemed **unhealthy**, it will be taken out of the service
-  * 
