@@ -39,4 +39,96 @@ add an SSH rule port 22 and `my-ip` to allow you to ssh in
 22. `aws s3 sync s3://bucket-name/ test.txt` - can also be used if there are a lot of files
 23. `aws s3 rm s3://bucket-name/test.txt` - deletes object in the bucket, so the bucket is now empty, but the bucket itself is there
 24. `aws s3 rb s3://bucket-name` - removes the bucket itself if empty, if not empty it would not allow you to delete
+  
+# S3 Python Scripting
 
+1. Create new EC2 instance, using Ubuntu 18.04
+2. From S3 steps, complete steps 1 - 10.
+3. `sudo python3 -m install boto3` - 
+4. Repeat steps 11-13 from the S3
+5. Create a test file we make one with random text called `test_script.txt`
+6. We then create 5 python scripts - `create_bucket.py`, `upload_file.py`, `download_file.py`, `delete_bucket_objects.py` and `delete_bucket.py`
+7. For create_bucket the code is
+  ```
+  import boto3
+
+ 
+
+s3 = boto3.resource('s3')
+s3.create_bucket(Bucket='mohammad-tech221-boto3', CreateBucketConfiguration= {'LocationConstraint': 'eu-west-1'})
+  ``
+8. Upload_file
+  ```
+import boto3
+
+ 
+
+# Create an S3 client
+s3_client = boto3.client('s3')
+
+ 
+
+# Upload the file to S3
+s3_client.upload_file("test_script.txt", "mohammad-tech221-boto3", "test_script.txt")
+  ```
+  
+9. Download_file
+  ```
+import boto3
+
+ 
+
+# Create an S3 client
+s3_client = boto3.client('s3')
+
+ 
+
+# Download the file from S3
+s3_client.download_file("mohammad-tech221-boto3", "test_script.txt", "test_script.txt")
+  ```
+10. Delete_bucket_objects
+  ```
+import boto3
+
+ 
+
+# Create an S3 resource
+s3 = boto3.resource('s3')
+
+ 
+
+# Delete all objects in the bucket
+bucket = s3.Bucket('mohammad-tech221-boto3')
+bucket.objects.all().delete()
+```
+
+11. Delete_bucket
+```
+import boto3
+
+ 
+
+# Create an S3 resource
+s3 = boto3.resource('s3')
+
+ 
+
+# Delete all objects in the bucket
+bucket = s3.Bucket('mohammad-tech221-boto3')
+bucket.objects.all().delete()
+
+ 
+
+ubuntu@ip-172-31-59-55:~$ cat delete_bucket.py
+import boto3
+
+ 
+
+client = boto3.client('s3')
+client.delete_bucket(Bucket="mohammad-tech221-boto3")
+```
+12. To run the scripts, we use `python <py_script_name>.py`, and it should run the script needed, and should be reflected on the S3 interface.
+13. Example of the `delete_bucket.py` function working is shown below.
+  
+  
+![image](https://user-images.githubusercontent.com/129314018/234902939-2972eab1-7858-4cb7-9179-993c12d6977a.png)
