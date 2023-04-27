@@ -23,3 +23,11 @@ add an SSH rule port 22 and `my-ip` to allow you to ssh in
 12.  We enter our access and secret keys, and for region we enter `eu-west-1` and output format as `json`
 13.  Once you enter, run `aws configure` to check if changes have been saved
 14.  `aws s3 ls` - when running this it should show all objects in the S3 bucket, which should confirm AWS CLI has been configured correctly.
+15.  We then use `aws s3 mb s3://nameofbucket` in the aws cli, name we used for name of bucket is `mohammad-tech221` use this naming convention
+16.  Bucket should now be made and be present on the S3 interface on AWS -> navigating to buckets on the interface
+17.  We make a test file using `sudo nano test.txt` and enter some information in it using `#`, save and exit
+18.  We then use `aws s3 cp test.txt s3://mohammad-tech221`, to upload the file to our bucket
+19.  Navigating through the S3 interface -> buckets -> <your-bucket>, it should show the file available within the bucket as shown below
+
+![image](https://user-images.githubusercontent.com/129314018/234869105-4e211d9e-fe6b-4845-9f5c-adc280801a42.png)
+
