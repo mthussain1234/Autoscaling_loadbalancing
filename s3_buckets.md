@@ -36,5 +36,7 @@ add an SSH rule port 22 and `my-ip` to allow you to ssh in
 
 ![image](https://user-images.githubusercontent.com/129314018/234872418-9564b26b-dbc4-4a7f-9497-bedeb1ab398a.png)
   
-22. 
+22. `aws s3 sync s3://bucket-name/ test.txt` - can also be used if there are a lot of files
+23. `aws s3 rm s3://bucket-name/test.txt` - deletes object in the bucket, so the bucket is now empty, but the bucket itself is there
+24. `aws s3 rb s3://bucket-name` - removes the bucket itself if empty, if not empty it would not allow you to delete
 
