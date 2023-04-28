@@ -1,5 +1,5 @@
 
-# 4 Golden Signals of monitoring
+# 4 Golden Signals of monitoring - what to monitor
 
 Latency: Time taken for request to complete. Help identify performance bottleneck, network issues .etc.
 
@@ -9,7 +9,8 @@ Errors: rate of failed requests, help identify bugs, software issues, external d
 
 Saturation: measures system resource utilisation, such as cpu, memory disk, network. Monitoring this, can help resource exhaustion, performance decrease, and failures due to resource constraints.
 
-# 4 Golden Rules of Monitoring
+# 4 Golden Rules of Monitoring - how to monitor
+
 Monitor everything that matters: monitor all critical components, and metrics that impact performance, availability and security of systems. 
 
 Monitor proactively, not reactively: stop waiting for issues to occur, proactive monitoring aims to detect and address problems before they impact the syste, ensures optimal system performance, and minimise downtime
