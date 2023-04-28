@@ -1,5 +1,5 @@
 
-# 4 Golden Rules of monitoring
+# 4 Golden Signals of monitoring
 
 Latency: Time taken for request to complete. Help identify performance bottleneck, network issues .etc.
 
